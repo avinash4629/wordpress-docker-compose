@@ -39,7 +39,7 @@ services:
     environment:
       # https://docs.phpmyadmin.net/en/latest/setup.html#docker-environment-variables
       PMA_HOST: db
-      PMA_PORT: 3306
+      PMA_PORT: 9090
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
     ports:
       - ${IP}:8080:80
@@ -49,7 +49,7 @@ services:
   db:
     image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
     ports:
-      - ${IP}:3306:3306 # change ip if required
+      - ${IP}:9090:9090 # change ip if required
     command: [
         '--default_authentication_plugin=mysql_native_password',
         '--character-set-server=utf8mb4',
